@@ -4,6 +4,7 @@ public class UserRegistrationProblem {
 
     //DECLARE PATTERN
     String firstNamePattern="^[A-Z][a-z]{2,}$";
+    String lastNamePattern="^[A-Z][a-z]{2,}$";
 
     //WELCOME MESSAGE
     public static void main(String[] args) {
@@ -15,4 +16,8 @@ public class UserRegistrationProblem {
         return (Pattern.matches(firstNamePattern,firstName));
     }
 
+    //  METHOD TO VALIDATE LAST NAME
+    public boolean validateLastName(String lastName) {
+        return (Pattern.matches(lastNamePattern,lastName));
+    }
 }

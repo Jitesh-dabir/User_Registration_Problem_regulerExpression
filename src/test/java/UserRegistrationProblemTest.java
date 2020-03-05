@@ -21,4 +21,19 @@ public class UserRegistrationProblemTest {
         Assert.assertFalse(firstName);
     }
 
+    //TEST TO CHECK  LAST NAME VALID
+    @Test
+    public void givenLastName_whenValid_thenReturn() {
+        String name="Dabir";
+        boolean lastName = userregistrationproblem.validateLastName(name);
+        Assert.assertTrue(lastName);
+    }
+
+    //TEST TO CHECK LAST NAME INVALID
+    @Test
+    public void givenLastName_whenInvalid_thenReturn() {
+        String name="dabir";
+        boolean lastName = userregistrationproblem.validateLastName(name);
+        Assert.assertFalse(lastName);
+    }
 }
