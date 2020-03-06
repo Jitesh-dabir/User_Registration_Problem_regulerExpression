@@ -169,8 +169,3 @@ public class UserRegistrationProblemTest {
         Assert.assertFalse(validPassword);
     }
     }
-
-
-
-
-
