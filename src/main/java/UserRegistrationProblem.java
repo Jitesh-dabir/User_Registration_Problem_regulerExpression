@@ -9,8 +9,9 @@ public class UserRegistrationProblem {
     String numberPattern="^[0-9]{2}[ ][0-9]{10}$";
     String passwordPatternFirstRule= "^[a-zA-Z0-9]{8,}";
     String passwordPatternSecondRule= "^(?=.*[A-Z])[a-zA-Z0-9]*.{8,}$";
+    String passwordPatternThirdRule="^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]*.{8,}$";
 
-    //WELCOME MESSAGE([A-Z])([a-zA-Z0-9]*)$
+    //WELCOME MESSAGE
     public static void main(String[] args) {
         System.out.println(" Welcome to User Registration Problem ");
     }
@@ -43,7 +44,11 @@ public class UserRegistrationProblem {
     //  METHOD TO VALIDATE PASSWORD SECOND RULE
     public boolean validatePasswordSecondRule(String password) {
             return (Pattern.matches(passwordPatternSecondRule,password));
-
         }
+
+    //  METHOD TO VALIDATE PASSWORD THIRD RULE
+    public boolean validatePasswordThirdRule(String password) {
+        return (Pattern.matches(passwordPatternThirdRule,password));
+    }
     }
 

@@ -136,6 +136,22 @@ public class UserRegistrationProblemTest {
         boolean validPassword = userRegistrationProblem.validatePasswordSecondRule(password);
         Assert.assertFalse(validPassword);
     }
+
+    //TEST TO CHECK PASSWORD VALID (THIRD RULE)
+    @Test
+    public void givenPasswordThirdRule_whenValid_thenReturn() {
+        String password = "j4teshDabir";
+        boolean validPassword = userRegistrationProblem.validatePasswordThirdRule(password);
+        Assert.assertTrue(validPassword);
+    }
+
+    //TEST TO CHECK PASSWORD INVALID (THIRD RULE)
+    @Test
+    public void givenPasswordThirdRule_whenInvalid_thenReturn() {
+        String password = "jitesh";
+        boolean validPassword = userRegistrationProblem.validatePasswordThirdRule(password);
+        Assert.assertFalse(validPassword);
+    }
     }
 
 
