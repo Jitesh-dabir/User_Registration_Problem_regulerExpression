@@ -104,6 +104,22 @@ public class UserRegistrationProblemTest {
             boolean mobileNumber = userRegistrationProblem.validateNumber(number);
             Assert.assertFalse(mobileNumber);
         }
+
+    //TEST TO CHECK PASSWORD VALID
+    @Test
+    public void givenPassword_whenValid_thenReturn() {
+        String password = "jiteshdabir";
+        boolean validPassword = userRegistrationProblem.validatePassword(password);
+        Assert.assertTrue(validPassword);
+    }
+
+    //TEST TO CHECK PASSWORD INVALID
+    @Test
+    public void givenPassword_whenInvalid_thenReturn() {
+        String password = "J4tesh";
+        boolean validPassword = userRegistrationProblem.validatePassword(password);
+        Assert.assertFalse(validPassword);
+    }
     }
 
 
