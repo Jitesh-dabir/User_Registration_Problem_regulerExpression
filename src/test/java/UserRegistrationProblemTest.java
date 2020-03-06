@@ -120,6 +120,22 @@ public class UserRegistrationProblemTest {
         boolean validPassword = userRegistrationProblem.validatePassword(password);
         Assert.assertFalse(validPassword);
     }
+
+    //TEST TO CHECK PASSWORD VALID (SECOND RULE)
+    @Test
+    public void givenPasswordSecondRule_whenValid_thenReturn() {
+        String password = "jiteshDabir789";
+        boolean validPassword = userRegistrationProblem.validatePasswordSecondRule(password);
+        Assert.assertTrue(validPassword);
+    }
+
+    //TEST TO CHECK PASSWORD INVALID (SECOND RULE)
+    @Test
+    public void givenPasswordSecondRule_whenInvalid_thenReturn() {
+        String password = "jitesh";
+        boolean validPassword = userRegistrationProblem.validatePasswordSecondRule(password);
+        Assert.assertFalse(validPassword);
+    }
     }
 
 

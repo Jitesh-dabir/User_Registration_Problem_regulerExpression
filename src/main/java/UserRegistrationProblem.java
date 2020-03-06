@@ -7,9 +7,10 @@ public class UserRegistrationProblem {
     String lastNamePattern="^[A-Z][a-z]{2,}$";
     String emailPattern="^[a-z]+[.]?([-+0-9]*)?([a-z0-9]+)+[@]+(([a-z]{3,5})|([0-9]))+[.]+[a-z]{2,3}+(([.]+[a-z]{2,3})*)$";
     String numberPattern="^[0-9]{2}[ ][0-9]{10}$";
-    String passwordPattern= "^[a-zA-Z0-9]{8,}";
+    String passwordPatternFirstRule= "^[a-zA-Z0-9]{8,}";
+    String passwordPatternSecondRule= "^(?=.*[A-Z])[a-zA-Z0-9]*.{8,}$";
 
-    //WELCOME MESSAGE
+    //WELCOME MESSAGE([A-Z])([a-zA-Z0-9]*)$
     public static void main(String[] args) {
         System.out.println(" Welcome to User Registration Problem ");
     }
@@ -36,6 +37,13 @@ public class UserRegistrationProblem {
 
     //  METHOD TO VALIDATE PASSWORD
     public boolean validatePassword(String password) {
-        return (Pattern.matches(passwordPattern,password));
+            return (Pattern.matches(passwordPatternFirstRule,password));
     }
-}
+
+    //  METHOD TO VALIDATE PASSWORD SECOND RULE
+    public boolean validatePasswordSecondRule(String password) {
+            return (Pattern.matches(passwordPatternSecondRule,password));
+
+        }
+    }
+
