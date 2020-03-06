@@ -87,7 +87,25 @@ public class UserRegistrationProblemTest {
             Assert.assertFalse(emailAddress);
         }
     }
-}
+
+    //TEST TO CHECK MOBILE NUMBER VALID
+    @Test
+    public void givenMobileNumber_whenValid_thenReturn() {
+            String number = "91 9919819801";
+            boolean mobileNumber = userRegistrationProblem.validateNumber(number);
+            Assert.assertTrue(mobileNumber);
+        }
+
+
+    //TEST TO CHECK MOBILE NUMBER INVALID
+    @Test
+    public void givenMobileNumber_whenInvalid_thenReturn() {
+        String number = "919919819801";
+            boolean mobileNumber = userRegistrationProblem.validateNumber(number);
+            Assert.assertFalse(mobileNumber);
+        }
+    }
+
 
 
 

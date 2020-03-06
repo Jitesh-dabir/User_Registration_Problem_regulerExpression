@@ -6,6 +6,7 @@ public class UserRegistrationProblem {
     String firstNamePattern="^[A-Z][a-z]{2,}$";
     String lastNamePattern="^[A-Z][a-z]{2,}$";
     String emailPattern="^[a-z]+[.]?([-+0-9]*)?([a-z0-9]+)+[@]+(([a-z]{3,5})|([0-9]))+[.]+[a-z]{2,3}+(([.]+[a-z]{2,3})*)$";
+    String numberPattern="^[0-9]{2}[ ][0-9]{10}$";
 
     //WELCOME MESSAGE
     public static void main(String[] args) {
@@ -25,5 +26,10 @@ public class UserRegistrationProblem {
     //  METHOD TO VALIDATE ALL SAMPLE EMAIL
     public boolean validateEmail(String email) {
         return (Pattern.matches(emailPattern,email));
+    }
+
+    //  METHOD TO VALIDATE MOBILE NUMBER
+    public boolean validateNumber(String number) {
+        return (Pattern.matches(numberPattern,number));
     }
 }
